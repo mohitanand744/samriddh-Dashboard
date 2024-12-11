@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import useContextData from "../../Hooks/useContextData";
 
 const Nav = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [selectedLanguage, setSelectedLanguage] = useState("ENG");
+  const { toggleSidebar, setToggleSidebar } = useContextData();
 
   const toggleDropdown = () => {
     setIsOpen(!isOpen);
@@ -17,6 +19,9 @@ const Nav = () => {
   return (
     <div className="bg-gradient-to-r from-cyan-500 to-blue-800 navbar  justify-between px-9 w-full  min-h-[90px]">
       <img
+        onClick={() => {
+          setToggleSidebar(!toggleSidebar);
+        }}
         className="w-[2rem] block lg:hidden active:scale-90 transition-all duration-150 ease-out"
         src="https://img.icons8.com/fluency/48/menu--v1.png"
         alt=""

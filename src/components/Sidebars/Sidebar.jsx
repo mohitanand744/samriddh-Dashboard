@@ -3,21 +3,27 @@ import { Link, useLocation } from "react-router-dom";
 import DashboardIcon from "../Dashboards/SVGs/DashboardIcon";
 import LoanIcons from "../Dashboards/SVGs/LoanIcons";
 import AvatarIcons from "./../Dashboards/SVGs/AvatarIcons";
+import useContextData from "../../Hooks/useContextData";
 
 const Sidebar = () => {
   const location = useLocation();
   const [active, setActive] = useState(
     location.pathname.replaceAll("/", "") || "dashboard"
   );
-
+  const { toggleSidebar, setToggleSidebar } = useContextData();
   return (
     <div
-      className={`w-[15rem] fixed z-40 lg:left-0 -left-[100%]  xl:left-0 top-0 bottom-0 min-h-[100vh] flex flex-col justify-between items-center  bg-white border-r transition-all duration-200 ease-in-out`}
+      className={`w-[15rem] fixed ${
+        toggleSidebar ? "left-0" : "-left-[100%]"
+      } z-40 lg:left-0 -left-[100%]  xl:left-0 top-0 bottom-0 min-h-[100vh] flex flex-col justify-between items-center  bg-white border-r transition-all duration-200 ease-in-out`}
     >
       <img
         className="absolute block lg:hidden right-2 top-1 w-[1.7rem] cursor-pointer"
         src="https://img.icons8.com/arcade/64/multiply.png"
         alt=""
+        onClick={() => {
+          setToggleSidebar(!toggleSidebar);
+        }}
       />
       <div className="w-full p-5 logo">
         <img className="mx-auto" src="/images/sLogo.png" alt="" />
