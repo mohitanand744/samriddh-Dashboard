@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import DashboardIcon from "../Dashboards/SVGs/DashboardIcon";
 import LoanIcons from "../Dashboards/SVGs/LoanIcons";
@@ -6,11 +6,13 @@ import AvatarIcons from "./../Dashboards/SVGs/AvatarIcons";
 import useContextData from "../../Hooks/useContextData";
 
 const Sidebar = () => {
-  const location = useLocation();
-  const [active, setActive] = useState(
-    location.pathname.replaceAll("/", "") || "dashboard"
-  );
-  const { toggleSidebar, setToggleSidebar } = useContextData();
+  const { toggleSidebar, pathName, setToggleSidebar } = useContextData();
+  const [active, setActive] = useState(pathName || "dashboard");
+
+  useEffect(() => {
+    setActive(pathName);
+  }, [pathName]);
+
   return (
     <div
       className={`w-[15rem] fixed ${

@@ -7,8 +7,8 @@ const AboutProd = () => {
   return (
     <div className="w-full md:max-w-md">
       <h1
-        className={`mb-4 text-xl font-bold text-start mt-6 xl:mt-0 ${
-          pathName === "dashboardloan" && "mt-6"
+        className={`mb-4 text-xl font-bold text-start  ${
+          pathName === "dashboardloan" ? "mt-6" : "mt-6 xl:mt-0"
         }`}
       >
         About That

@@ -6,6 +6,7 @@ import AboutProd from "../Cards/AboutProd";
 import MainButton from "../Buttons/MainButton";
 import useContextData from "../../Hooks/useContextData";
 import HeaderBar from "../Headers/HeaderBar";
+import ProfileForm from "../Forms/ProfileForm";
 
 const Dashboard = () => {
   const { pathName } = useContextData();
@@ -67,7 +68,10 @@ const Dashboard = () => {
                   />
                 </div>
                 <div className="mt-1 mb-2 mr-5 text-end">
-                  <MainButton text={"Next"} />
+                  <MainButton
+                    navigate="/dashboard/personal_Loan_Application"
+                    text={"Next"}
+                  />
                 </div>
               </div>
             </div>
@@ -122,6 +126,44 @@ const Dashboard = () => {
             <AboutProd />
           </div>
         </div>
+      )}
+
+      {pathName === "dashboardpersonal_Loan_Application" && (
+        <>
+          <div className="grid grid-cols-1 xl:grid-cols-12  w-[95%] xl:space-x-4 mx-auto">
+            <div className="col-span-8">
+              <ProfileForm />
+            </div>
+            <div className="flex flex-col col-span-4 gap-10">
+              <div className="">
+                <h1 className="text-xl font-medium md:text-2xl text-start">
+                  For Reference
+                </h1>
+
+                <div className="w-full bg-[#2C5AA7] rounded-2xl">
+                  <img
+                    src="https://s3-alpha-sig.figma.com/img/5827/0320/07561266e296280373d3bfe95e800d05?Expires=1734912000&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=C4ZMsb8L~nWGt9TjV1BWoNYCrjOz80nIZW5k~snaCXrDqMYT-ZuHQ3XwB3~~QjwE9oQbRYG0jbzdgtZS0FaxzjqQrOYsUildEAjxnOIm~7-YemgUjjXExVy-qVdTHA3~XL5Jb9vMbArXnYT1fneTMd51rym1Hnp~SQHKJ-cDqgVi8NEY-ZGy37OHHq4XlmYf3nzuq5VtPpAlxw2XQibmAEpG32ylcoeAwJOry3gquOcpQ5y3Z49W0LjWKbwYVzbLlTbiWPbTGhX7JyDPWO74OMk9DILoR4q5Y-i4koEsCgVuY~Run8Xzk6v~1JzZfWKBxqHNNPh1EansYMWMCP9cbw__"
+                    alt="Reference Image"
+                  />
+                </div>
+              </div>
+
+              <div className="">
+                <h1 className="mb-3 text-sm font-semibold text-center">
+                  How to apply For Personal Loan In Samriddh Kendra
+                </h1>
+
+                <div className="w-full ">
+                  <img
+                    className="object-cover w-full"
+                    src="/images/video.png"
+                    alt="Reference Image"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </>
       )}
     </>
   );
