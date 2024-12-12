@@ -2,7 +2,7 @@ import React from "react";
 
 const EmploymentCard = ({ imagePath, text }) => {
   return (
-    <label className="relative w-full  sm:w-[48%]  group">
+    <label className="relative hover:scale-105 transition-all w-full  sm:w-[48%]  group">
       <input
         type="radio"
         name="EmploymentType"

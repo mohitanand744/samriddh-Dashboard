@@ -3,7 +3,9 @@ import React from "react";
 const ProductCard = ({ imagePath, text, width }) => {
   return (
     <label
-      className={`relative ${width ? width : "w-full  sm:w-[49%]"}  group `}
+      className={`relative hover:scale-105 transition-all ${
+        width ? width : "w-full  sm:w-[49%]"
+      }  group `}
     >
       <input
         type="radio"
