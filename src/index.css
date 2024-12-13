@@ -2,3 +2,17 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.CustomLoginBg {
+  background-image: url("/images/LoginBg.webp");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+/* @media screen and (width < 600px) {
+  .CustomLoginBg {
+    background-position: left;
+  }
+}
+ */
