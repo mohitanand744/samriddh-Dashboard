@@ -6,7 +6,7 @@ const HeaderBar = () => {
   const { pathName } = useContextData();
 
   return (
-    <div className="flex items-center justify-between w-full h-20 gap-5 px-6 mb-5 bg-white">
+    <div className="flex flex-wrap items-center justify-between w-full gap-5 px-6 py-4 mb-5 bg-white h-fit md:h-20">
       <div className="flex items-center gap-8 ">
         {pathName === "dashboard" ? (
           ""
@@ -17,6 +17,8 @@ const HeaderBar = () => {
                 ? "/dashboard"
                 : pathName === "dashboardLoan_Amount"
                 ? "/dashboard/personal_Loan_Application"
+                : pathName === "dashboardemployment_details"
+                ? "/dashboard/Loan_Amount"
                 : ""
             }
           >
@@ -31,12 +33,12 @@ const HeaderBar = () => {
         </h1>
       </div>
       {pathName === "dashboardLoan_Amount" && (
-        <div className="font-medium text-gray-500 ">
+        <div className="w-full pt-2 font-medium text-gray-500 border-t-2 md:pt-0 md:w-fit md:border-t-0 text-start">
           <h1>
             Name: <span className="text-black ">RAMESH K SHRMA</span>
           </h1>
           <h1>
-            Date Of Birth: <span className="text-black ">22-07-1985</span>
+            DOB: <span className="text-black ">22-07-1985</span>
           </h1>
         </div>
       )}

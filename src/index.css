@@ -16,3 +16,13 @@
   }
 }
  */
+
+input[type="range"]::-webkit-slider-thumb {
+  appearance: none;
+  width: 5px;
+  height: 35px;
+  background-color: #003ab8; /* Blue color */
+
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}

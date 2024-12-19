@@ -11,6 +11,7 @@ const Router = () => {
         <Route path="loan" element={<Layout />} />
         <Route path="accounts" element={<Layout />} />
         <Route path="personal_Loan_Application" element={<Layout />} />
+        <Route path="employment_details" element={<Layout />} />
         <Route path="Loan_Amount" element={<Layout />} />
       </Route>
 
