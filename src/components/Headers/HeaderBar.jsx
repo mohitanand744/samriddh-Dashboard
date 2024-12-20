@@ -19,6 +19,10 @@ const HeaderBar = () => {
                 ? "/dashboard/personal_Loan_Application"
                 : pathName === "dashboardemployment_details"
                 ? "/dashboard/Loan_Amount"
+                : pathName === "dashboardbankDetails"
+                ? "/dashboard/employment_details"
+                : pathName === "dashboarddocUpload"
+                ? "/dashboard/bankDetails"
                 : ""
             }
           >

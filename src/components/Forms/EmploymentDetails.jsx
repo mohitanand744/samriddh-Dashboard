@@ -8,7 +8,7 @@ const EmploymentDetails = () => {
 
   return (
     <div className="w-[90%] p-6 mx-auto bg-white rounded-2xl shadow-md ">
-      <h2 className="mb-6 text-lg font-semibold text-gray-700">
+      <h2 className="mb-6 text-lg font-semibold text-black text-start">
         Employment Details
       </h2>
 
@@ -73,7 +73,7 @@ const EmploymentDetails = () => {
         </div>
         <div className="flex justify-end w-full">
           {" "}
-          <div class="w-32  py-2 border border-gray-700 rounded-lg text-gray-700 text-xl bg-white">
+          <div class="w-32 text-center py-2 border border-gray-700 rounded-lg text-gray-700 text-xl bg-white">
             ₹{salary}
           </div>
         </div>
@@ -126,7 +126,10 @@ const EmploymentDetails = () => {
         ) : (
           <div className="w-[50%]"></div>
         )}
-        <MainButton text={"Submit & Next"} />
+        <MainButton
+          text={"Submit & Next"}
+          navigate={"/dashboard/bankDetails"}
+        />
       </div>
     </div>
   );

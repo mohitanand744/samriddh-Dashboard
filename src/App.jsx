@@ -3,9 +3,9 @@ import Dashboard from "./components/Dashboards/Dashboard";
 
 const App = () => {
   return (
-    <center className="h-full text-black bg-blue-50">
+    <div className="min-h-[100vh] text-black  bg-blue-50">
       <Dashboard />
-    </center>
+    </div>
   );
 };
 

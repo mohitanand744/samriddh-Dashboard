@@ -10,6 +10,8 @@ import ProfileForm from "../Forms/ProfileForm";
 import HowtoApply from "../HowtoApply/HowtoApply";
 import LoanAmount from "../Forms/LoanAmount";
 import EmploymentDetails from "../Forms/EmploymentDetails";
+import BackDetails from "../Forms/BackDetails";
+import DocumentUpload from "./../Forms/DocumentUpload";
 
 const Dashboard = () => {
   const { pathName } = useContextData();
@@ -19,10 +21,10 @@ const Dashboard = () => {
   return (
     <>
       <HeaderBar />
-      <div className="h-full bg-blue-50">
+      <div className="pb-5 bg-blue-50">
         {pathName === "dashboard" && (
           <div className="grid grid-cols-1 xl:grid-cols-12  w-[95%] xl:space-x-4 mx-auto">
-            <div className="col-span-8">
+            <div className="col-span-12 md:col-span-8">
               <div className="flex flex-col gap-6">
                 <div className="p-5 bg-gray-50 rounded-2xl">
                   <p className="text-lg font-semibold text-gray-800 text-start">
@@ -87,7 +89,7 @@ const Dashboard = () => {
         )}
         {pathName === "dashboardloan" && (
           <div className="grid grid-cols-1 xl:grid-cols-12  w-[95%] xl:space-x-4 mx-auto">
-            <div className="col-span-8">
+            <div className="col-span-12 md:col-span-8">
               <div className="flex flex-col gap-6">
                 <div className="p-5 bg-gray-50 rounded-2xl">
                   <p className="text-lg text-start">Our Loans</p>
@@ -132,13 +134,13 @@ const Dashboard = () => {
           </div>
         )}
 
-        <div className="grid grid-cols-1 xl:grid-cols-12  w-[95%] xl:space-x-4 mx-auto">
+        <div className="grid grid-cols-12  w-[95%] xl:space-x-4 gap-2 mx-auto">
           {pathName === "dashboardpersonal_Loan_Application" && (
             <>
-              <div className="col-span-8">
+              <div className="col-span-12 md:col-span-8">
                 <ProfileForm />
               </div>
-              <div className="flex flex-col col-span-4 gap-10">
+              <div className="flex flex-col col-span-12 gap-10 md:col-span-4">
                 <div className="">
                   <h1 className="text-xl font-medium md:text-2xl text-start">
                     For Reference
@@ -158,10 +160,10 @@ const Dashboard = () => {
           )}
           {pathName === "dashboardLoan_Amount" && (
             <>
-              <div className="col-span-8">
+              <div className="col-span-12 md:col-span-8">
                 <LoanAmount />
               </div>
-              <div className="flex flex-col col-span-4 gap-10">
+              <div className="flex flex-col col-span-12 gap-10 md:col-span-4">
                 <HowtoApply />
               </div>
             </>
@@ -169,10 +171,31 @@ const Dashboard = () => {
 
           {pathName === "dashboardemployment_details" && (
             <>
-              <div className="col-span-8">
+              <div className="col-span-12 md:col-span-8">
                 <EmploymentDetails />
               </div>
-              <div className="flex flex-col col-span-4 gap-10">
+              <div className="flex flex-col col-span-12 gap-10 md:col-span-4">
+                <HowtoApply />
+              </div>
+            </>
+          )}
+
+          {pathName === "dashboardbankDetails" && (
+            <>
+              <div className="col-span-12 md:col-span-8">
+                <BackDetails />
+              </div>
+              <div className="flex flex-col col-span-12 gap-10 md:col-span-4">
+                <HowtoApply />
+              </div>
+            </>
+          )}
+          {pathName === "dashboarddocUpload" && (
+            <>
+              <div className="col-span-12 md:col-span-8">
+                <DocumentUpload />
+              </div>
+              <div className="flex flex-col col-span-12 gap-10 md:col-span-4">
                 <HowtoApply />
               </div>
             </>

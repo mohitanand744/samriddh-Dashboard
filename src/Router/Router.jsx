@@ -13,6 +13,8 @@ const Router = () => {
         <Route path="personal_Loan_Application" element={<Layout />} />
         <Route path="employment_details" element={<Layout />} />
         <Route path="Loan_Amount" element={<Layout />} />
+        <Route path="bankDetails" element={<Layout />} />
+        <Route path="docUpload" element={<Layout />} />
       </Route>
 
       <Route path="*" element={<center>Page NOte Found</center>} />
